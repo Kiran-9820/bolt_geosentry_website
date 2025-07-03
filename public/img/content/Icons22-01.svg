@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #2936be;
+      }
+
+      .cls-3 {
+        fill: #15357a;
+      }
+
+      .cls-4 {
+        fill: #204b9f;
+      }
+
+      .cls-5 {
+        fill: #c3dae5;
+      }
+
+      .cls-6 {
+        fill: #92b4ea;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-2" cx="25.28" cy="34.72" r="25.28"/>
+    <circle class="cls-6" cx="25.28" cy="34.72" r="21.62"/>
+    <circle class="cls-7" cx="25.28" cy="34.72" r="18.45"/>
+    <circle class="cls-5" cx="25.28" cy="34.72" r="13.68"/>
+    <circle class="cls-6" cx="25.28" cy="34.72" r="10.78" transform="translate(-13.06 54.06) rotate(-80.71)"/>
+    <circle class="cls-2" cx="25.28" cy="34.72" r="7.49" transform="translate(-13.06 54.08) rotate(-80.73)"/>
+    <circle class="cls-7" cx="25.28" cy="34.72" r="4.9"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="25.18" y="20.24" width="26.48" height="4.77" transform="translate(-4.75 33.79) rotate(-45)"/>
+    <polygon class="cls-4" points="46.07 14.98 52.98 8.06 59.96 8.52 52.26 16.23 46.07 14.98"/>
+    <polygon class="cls-3" points="46.07 14.98 52.98 8.06 52.53 1.09 44.82 8.79 46.07 14.98"/>
+    <polygon class="cls-4" points="25.28 35.77 32.94 33.1 27.95 28.11 25.28 35.77"/>
+    <polygon class="cls-3" points="25.28 35.77 32.94 33.1 30.44 30.61 25.28 35.77"/>
+  </g>
+</svg>
