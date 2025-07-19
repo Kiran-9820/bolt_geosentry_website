@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PulseGlobe from "../common/PulseGlobe";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -8,246 +9,300 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <main>
-      {/* PAGE TITLE */}
-      <section className="p-0 bg-primary-solid">
-        {/* banner container */}
-        <div className="container d-table">
-          <div className="d-table-cell align-middle py-6 py-lg-6">
-            <div className="row align-items-center z-index-9 position-relative">
-              {/* left banner text */}
-              <div className="col-lg-14 mb-4 mb-lg-0">
-                <div className="header-text text-center">
-                  <h1
-                    className="display-lg-16 display-xxl-10 text-white w-md-80 w-lg-100 mx-auto mb-1-9 wow fadeIn"
-                    data-wow-delay=".1s"
-                  >
-                    A Cutting-Edge GPS Tracking Solution Driven by AI and Built
-                    on the Reliable Google Cloud Platform
-                  </h1>
+    <main className="modern-main">
+      <section className="about-hero">
+        <div className="container">
+          <div className="row align-items-center mt-4">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="hero-content">
+                <span className="hero-badge">About Geosentry</span>
+                <h1 className="hero-title-large">
+                  Pioneering the Future of
+                  <span className="text-gradient"> Location Intelligence</span>
+                </h1>
+                <p className="hero-subtitle">
+                  We're not just a tech company—we're visionaries reshaping how
+                  businesses interact with location data through cutting-edge AI
+                  and cloud technology.
+                </p>
+                <div className="hero-stats">
+                  <div className="stat-item">
+                    <h3 className="stat-number">50K+</h3>
+                    <p className="stat-label">API Calls Daily</p>
+                  </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">99.9%</h3>
+                    <p className="stat-label">Uptime</p>
+                  </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">100+</h3>
+                    <p className="stat-label">Happy Clients</p>
+                  </div>
                 </div>
-              </div>
-              {/* end banner text */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Are Section */}
-      <section className="p-0">
-        <div className="container position-relative z-index-9">
-          <div className="row align-items-center">
-            <div className="col-lg-6 mb-0">
-              <div className="position-relative text-center mb-0">
-                <img
-                  src="/img/content/about-us.png"
-                  className="position-relative z-index-2 img-aboutus mb-0"
-                  alt="About Us"
-                />
               </div>
             </div>
             <div className="col-lg-6">
-              <div>
-                <div
-                  className="section-heading4 wow fadeInUp"
-                  data-wow-delay=".1s"
-                >
-                  <span>Who We Are</span>
-                </div>
-                <h2 className="mb-1-9 h1 wow fadeInUp" data-wow-delay=".2s">
-                  An AI Powered Geo Service
-                </h2>
-                <p className="wow fadeInUp" data-wow-delay=".3s">
-                  Geosentry, a leader in tech solutions, excels in advanced
-                  GeoServices like geofencing and geo-tracking. Our expertise
-                  includes seamless integration with the Google Cloud Platform
-                  through API, utilizing AI methods to redefine fleet
-                  management. This ensures businesses gain a strategic advantage
-                  in navigating the dynamic digital landscape.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach Section */}
-      <section className="position-relative z-index-9">
-        <div className="bg-primary-solid section-bg-aboutus"></div>
-        <div className="container position-relative z-index-9">
-          <div
-            className="section-heading5 white text-center wow fadeInUp"
-            data-wow-delay=".2s"
-          >
-            <h2 className="mb-0 h1 z-index-9 position-relative text-white">
-              Geosentry: Your Partner in Achieving <br /> Your Business
-              Objectives
-            </h2>
-            <span className="title-shape"></span>
-          </div>
-          <div className="row justify-content-center mt-8">
-            <div className="col-md-9">
-              <div className="row g-0 bg-white box-shadow-large">
-                <div className="col-lg-4">
-                  <div
-                    className="bg-light-gray bg-img cover-background p-1-9 p-sm-1-9 h-100"
-                    data-background="/img/content/Untitled-2.png"
-                    style={{
-                      backgroundImage: "url(/img/content/Untitled-2.png)",
-                    }}
-                  >
-                    <h1
-                      className="wow fadeInUp mt-5 text-center"
-                      data-wow-delay=".2s"
-                    >
-                      Our <br />
-                      Approach
-                    </h1>
+              <div className="hero-visual">
+                <div className="floating-card card-1" style={{ opacity: 0.9 }}>
+                  <div className="card-icon">
+                    <i className="fas fa-map-marked-alt"></i>
                   </div>
+                  <h4>Geofencing</h4>
+                  <p>Smart boundary detection</p>
                 </div>
-                <div className="col-lg-8">
-                  <div className="bg-white p-1-9 p-sm-1-9 h-90 mt-2">
-                    <p>
-                      At Geosentry, we believe in a customer-centric approach,
-                      where your goals and vision are at the heart of everything
-                      we do. We collaborate closely with you to understand your
-                      unique requirements, challenges, and objectives. Our team
-                      of highly skilled software engineers, designers, and
-                      project managers work tirelessly to develop tailored
-                      solutions that align perfectly with your business
-                      strategy.
-                    </p>
+                <div className="floating-card card-2" style={{ opacity: 0.9 }}>
+                  <div className="card-icon">
+                    <i className="fas fa-route"></i>
                   </div>
+                  <h4>Route Optimization</h4>
+                  <p>AI-powered navigation</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="pricing-line1"></span>
-        <span className="pricing-line2"></span>
-        <img
-          src="/img/shapes/flower1.png"
-          className="position-absolute pricing-shape opacity2"
-          alt="Shape"
-        />
-        <div className="d-inline-block p-2 bg-green-dark ani-zoomin position-absolute top-20 right-5 rounded-circle"></div>
-        <div className="d-inline-block p-2 bg-orange-dark ani-zoomin position-absolute top-50 left-5 rounded-circle"></div>
-        <div className="d-inline-block p-2 bg-yellow-dark ani-zoomin position-absolute top-10 left-30 rounded-circle"></div>
-      </section>
-
-      {/* Why Geosentry Stands Out Section */}
-      <section className="section-aboutus">
-        <div className="container pt-0">
-          <div className="w-md-85 w-lg-65 w-xl-50 text-center mx-auto mb-6 mb-lg-6">
-            <h1 className="mb-0">Why Geosentry Stands Out</h1>
-          </div>
-          <div className="row mt-n5">
-            <div className="col-md-6 col-lg-3 mt-5">
-              <div className="card card-style03 h-100">
-                <div className="card-body">
-                  <span className="mb-2-6 d-block">
-                    <img
-                      src="/img/content/Experience.png"
-                      alt="Experience"
-                      className="w-50"
-                    />
-                  </span>
-                  <h3 className="h5 mb-3">Experience and Expertise</h3>
-                  <p className="display-30">
-                    With years of industry experience, we have honed our
-                    software development skills and expertise. Our team stays
-                    up-to-date with the latest technologies and trends, ensuring
-                    that the solutions we deliver are modern and future-proof.
-                  </p>
+                <div className="floating-card card-3" style={{ opacity: 0.9 }}>
+                  <div className="card-icon">
+                    <i className="fas fa-satellite-dish"></i>
+                  </div>
+                  <h4>Real-time Tracking</h4>
+                  <p>Live location updates</p>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 mt-5">
-              <div className="card card-style03 h-100">
-                <div className="card-body">
-                  <span className="mb-2-6 d-block">
-                    <img
-                      src="/img/content/Customer.png"
-                      alt="Client-Centric"
-                      className="w-50"
-                    />
-                  </span>
-                  <h3 className="h5 mb-3">Client-Centric Approach</h3>
-                  <p className="display-30">
-                    Your needs and objectives are our top priority. We customize
-                    our solutions to align perfectly with your unique
-                    requirements and maintain transparent communication
-                    throughout the development process, keeping you involved
-                    every step of the way.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 mt-5">
-              <div className="card card-style03 h-100">
-                <div className="card-body">
-                  <span className="mb-2-6 d-block">
-                    <img
-                      src="/img/content/Delivery.png"
-                      alt="Timely Delivery"
-                      className="w-50"
-                    />
-                  </span>
-                  <h3 className="h5 mb-3">Timely Delivery</h3>
-                  <p className="display-30">
-                    Recognizing the significance of time in business, we employ
-                    agile development methodologies that enable us to
-                    consistently deliver projects on schedule, without
-                    compromising quality.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 mt-5">
-              <div className="card card-style03 h-100">
-                <div className="card-body">
-                  <span className="mb-2-6 d-block">
-                    <img
-                      src="/img/content/price.png"
-                      alt="Competitive Pricing"
-                      className="w-50"
-                    />
-                  </span>
-                  <h3 className="h5 mb-3">Competitive Pricing</h3>
-                  <p className="display-30">
-                    We offer cost-effective solutions without compromising
-                    quality. Our pricing is transparent, and we provide detailed
-                    project estimates upfront.
-                  </p>
-                </div>
+                <PulseGlobe />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section
-        className="footer-bottom-bg parallax fadeInUp primary-overlay-90 cover-background md"
-        data-overlay-dark="9"
-      >
+      {/* STORY SECTION */}
+      <section className="story-section pt-5 pb-5">
         <div className="container">
-          <div className="row position-relative z-index-1 align-items-center">
-            <div className="col-lg-9 text-center text-lg-start mb-3 mb-lg-0">
-              <h5 className="text-white">Get Started with Geosentry Today</h5>
-              <h6 className="text-white">
-                Whether you're a startup looking to add location-based features
-                to your app or an established enterprise seeking to optimize
-                your logistics, Geosentry is here to empower you with
-                cutting-edge GPS tracking solutions. Take your business to the
-                next level with our GPS tracking route API, GSP tracker devices,
-                and AI-driven insights.
-              </h6>
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="story-content">
+                <div className="section-header text-center mb-5">
+                  <span className="hero-badge">Our Story</span>
+                  <h2 className="story-section-title">
+                    From Vision to Innovation
+                  </h2>
+                  <div className="title-underline"></div>
+                </div>
+
+                <div className="timeline">
+                  <div className="timeline-item">
+                    <div className="timeline-marker">
+                      <i className="fas fa-lightbulb"></i>
+                    </div>
+                    <div className="timeline-content">
+                      <h4>The Spark</h4>
+                      <p>
+                        Born from the need to simplify complex location-based
+                        services, Geosentry emerged as a solution to bridge the
+                        gap between traditional GPS systems and modern AI
+                        capabilities.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="timeline-item">
+                    <div className="timeline-marker">
+                      <i className="fas fa-rocket"></i>
+                    </div>
+                    <div className="timeline-content">
+                      <h4>Building the Foundation</h4>
+                      <p>
+                        Leveraging Google Cloud Platform's robust
+                        infrastructure, we developed APIs that transform raw
+                        location data into actionable business intelligence.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="timeline-item">
+                    <div className="timeline-marker">
+                      <i className="fas fa-trophy"></i>
+                    </div>
+                    <div className="timeline-content">
+                      <h4>Driving Success</h4>
+                      <p>
+                        Today, we empower businesses across industries with
+                        cutting-edge geofencing, route optimization, and
+                        real-time tracking solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-lg-3 text-center text-lg-end">
-              <a href="/contact" className="butn style-two">
-                <span>Contact Us</span>
-              </a>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES SECTION */}
+      <section className="values-section pt-5 pb-5">
+        <div className="container">
+          <div className="section-header text-center mb-5">
+            <span className="hero-badge">Our Values</span>
+            <h2 className="values-section-title">What Drives Us Forward</h2>
+            <div className="title-underline"></div>
+          </div>
+
+          <div className="row g-4">
+            <div className="col-lg-4 col-md-6">
+              <div className="value-card h-100">
+                <div className="value-icon">
+                  <i className="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation First</h3>
+                <p>
+                  We constantly push boundaries, exploring new technologies and
+                  methodologies to deliver groundbreaking solutions.
+                </p>
+                <div className="card-accent"></div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6">
+              <div className="value-card h-100">
+                <div className="value-icon">
+                  <i className="fas fa-shield-alt"></i>
+                </div>
+                <h3>Unmatched Reliability</h3>
+                <p>
+                  Our 99.9% uptime guarantee ensures your business operations
+                  never skip a beat, backed by enterprise-grade infrastructure.
+                </p>
+                <div className="card-accent"></div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6">
+              <div className="value-card h-100">
+                <div className="value-icon">
+                  <i className="fas fa-handshake"></i>
+                </div>
+                <h3>True Partnership</h3>
+                <p>
+                  We don't just provide services—we become your technology
+                  partner, invested in your long-term success and growth.
+                </p>
+                <div className="card-accent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TECHNOLOGY SHOWCASE */}
+      <section className="tech-showcase pt-5 pb-5">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="tech-content">
+                <span className="hero-badge">Technology Stack</span>
+                <h2 className="tech-section-title">
+                  Built on Industry-Leading Platforms
+                </h2>
+                <div className="heading-line mx-auto mb-4"></div>
+
+                <p className="tech-description">
+                  Our solutions are powered by Google Cloud Platform's advanced
+                  infrastructure, combined with cutting-edge AI algorithms and
+                  real-time data processing capabilities.
+                </p>
+
+                <div className="tech-features">
+                  <div className="feature-item">
+                    <i className="fab fa-google"></i>
+                    <span>Google Cloud Platform Integration</span>
+                  </div>
+                  <div className="feature-item">
+                    <i className="fas fa-brain"></i>
+                    <span>Machine Learning & AI</span>
+                  </div>
+                  <div className="feature-item">
+                    <i className="fas fa-shield-alt"></i>
+                    <span>Enterprise-Grade Security</span>
+                  </div>
+                  <div className="feature-item">
+                    <i className="fas fa-sync-alt"></i>
+                    <span>Real-time Data Processing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="tech-visual">
+                <div className="tech-stack-grid">
+                  <div className="tech-item">
+                    <i
+                      className="fab fa-google"
+                      style={{ fontSize: "60px", color: "#4285f4" }}
+                    ></i>
+                    <h5 className="mt-3">Google Cloud</h5>
+                  </div>
+                  <div className="tech-item">
+                    <i
+                      className="fas fa-brain"
+                      style={{ fontSize: "60px", color: "#0063ff" }}
+                    ></i>
+                    <h5 className="mt-3">AI/ML</h5>
+                  </div>
+                  <div className="tech-item">
+                    <i
+                      className="fas fa-code"
+                      style={{ fontSize: "60px", color: "#28a745" }}
+                    ></i>
+                    <h5 className="mt-3">REST API</h5>
+                  </div>
+                  <div className="tech-item">
+                    <i
+                      className="fas fa-clock"
+                      style={{ fontSize: "60px", color: "#ff6b6b" }}
+                    ></i>
+                    <h5 className="mt-3">Real-time</h5>
+                  </div>
+                </div>
+                <div className="floating-elements">
+                  <div className="floating-dot dot-1"></div>
+                  <div className="floating-dot dot-2"></div>
+                  <div className="floating-dot dot-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="modern-cta">
+        <div className="cta-background-animation">
+          <div className="animated-circle circle-1"></div>
+          <div className="animated-circle circle-2"></div>
+          <div className="animated-circle circle-3"></div>
+        </div>
+        <div className="container cta-content">
+          <div className="row justify-content-center text-center">
+            <div className="col-lg-8">
+              <div className="cta-tag">Ready to Transform?</div>
+              <h2 className="cta-heading mb-4">
+                Let's Build the Future of Location Intelligence Together
+              </h2>
+              <p className="cta-text mb-4">
+                Join hundreds of businesses that trust Geosentry to power their
+                location-based services. Experience the difference that true
+                innovation makes.
+              </p>
+              <div className="cta-buttons">
+                <a href="/contact" className="cta-button primary me-3">
+                  <span>Start Your Journey</span>
+                  <i className="fas fa-arrow-right"></i>
+                </a>
+                <a
+                  href="/service/fleet-management"
+                  className="cta-button secondary"
+                >
+                  <span>Explore Solutions</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

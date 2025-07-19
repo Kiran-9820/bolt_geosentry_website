@@ -43,12 +43,19 @@ const DemoRequestModal = ({ showModal, setShowModal }) => {
       setLoading(false);
       setShowModal(false);
 
-      // Show success message
+      // Show success message with styling that matches the screenshot exactly
       Swal.fire({
         icon: "success",
         title: "Success",
-        text: "Your demo request has been sent successfully. Our team will contact you shortly!",
-        confirmButtonColor: "#292dc2",
+        html: "Your demo request has been sent successfully.<br>Our team will contact you shortly!",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#5e5cc7",
+        showClass: {
+          popup: "animate__animated animate__fadeIn",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOut",
+        },
       });
 
       // Clear form
@@ -62,11 +69,20 @@ const DemoRequestModal = ({ showModal, setShowModal }) => {
     } catch (error) {
       console.error(error);
       setLoading(false);
+
+      // Show error message with consistent styling
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "An error occurred while sending your request. Please try again later.",
-        confirmButtonColor: "#292dc2",
+        html: "An error occurred while sending your request.<br>Please try again later.",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#5e5cc7",
+        showClass: {
+          popup: "animate__animated animate__fadeIn",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOut",
+        },
       });
     }
   };

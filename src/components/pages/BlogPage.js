@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import geocodingImage from "../../assets/img/banner/1.png";
+import gpsImage from "../../assets/img/banner/2.png";
+import PulseGlobe from "../common/PulseGlobe";
 
 const BlogPage = () => {
   useEffect(() => {
@@ -23,9 +26,9 @@ const BlogPage = () => {
         navText: [
           '<i class="fas fa-chevron-left"></i>',
           '<i class="fas fa-chevron-right"></i>',
-        ]
+        ],
       });
-      
+
       window.jQuery(".blog-carousel").owlCarousel({
         loop: true,
         margin: 30,
@@ -40,26 +43,30 @@ const BlogPage = () => {
         responsive: {
           0: { items: 1 },
           768: { items: 2 },
-          992: { items: 3 }
-        }
+          992: { items: 3 },
+        },
       });
     }
-    
+
     // Initialize search functionality
-    const searchInput = document.getElementById('blog-search-input');
+    const searchInput = document.getElementById("blog-search-input");
     if (searchInput) {
-      searchInput.addEventListener('keyup', function() {
+      searchInput.addEventListener("keyup", function () {
         const searchTerm = this.value.toLowerCase();
-        const blogCards = document.querySelectorAll('.blog-card');
-        
-        blogCards.forEach(card => {
-          const title = card.querySelector('.blog-title').textContent.toLowerCase();
-          const content = card.querySelector('.blog-excerpt').textContent.toLowerCase();
-          
+        const blogCards = document.querySelectorAll(".blog-card");
+
+        blogCards.forEach((card) => {
+          const title = card
+            .querySelector(".blog-title")
+            .textContent.toLowerCase();
+          const content = card
+            .querySelector(".blog-excerpt")
+            .textContent.toLowerCase();
+
           if (title.includes(searchTerm) || content.includes(searchTerm)) {
-            card.style.display = 'block';
+            card.style.display = "block";
           } else {
-            card.style.display = 'none';
+            card.style.display = "none";
           }
         });
       });
@@ -67,417 +74,597 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <main>
-      {/* PAGE TITLE */}
-      <section className="p-0 bg-primary-solid">
-        {/* banner container */}
-        <div className="container d-table">
-          <div className="d-table-cell align-middle py-6 py-lg-6">
-            <div className="row align-items-center z-index-9 position-relative">
-              {/* left banner text */}
-              <div className="col-lg-14 mb-4 mb-lg-0">
-                <div className="header-text text-center">
-                  <h1
-                    className="display-lg-16 display-xxl-10 text-white w-md-80 w-lg-100 mx-auto mb-1-9 wow fadeIn"
-                    data-wow-delay=".1s"
-                  >
-                    Latest Blogs and Updates from Geosentry.
-                  </h1>
+    <main className="modern-main">
+      {/* HERO SECTION WITH UNIQUE DESIGN */}
+      <section className="blog-hero pb-0">
+        <div className="container">
+          <div className="row align-items-center mt-4">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="hero-content">
+                <span className="hero-badge">Geosentry Blog</span>
+                <h1 className="hero-title-large">
+                  Insights & Innovation in
+                  <span className="text-gradient"> Location Technology</span>
+                </h1>
+                <p className="hero-subtitle">
+                  Discover the latest trends, technical deep-dives, and success
+                  stories from the world of geospatial intelligence and
+                  location-based services.
+                </p>
+                <div className="hero-stats">
+                  <div className="stat-item">
+                    <h3 className="stat-number">50+</h3>
+                    <p className="stat-label">Technical Articles</p>
+                  </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">10K+</h3>
+                    <p className="stat-label">Monthly Readers</p>
+                  </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">Weekly</h3>
+                    <p className="stat-label">New Content</p>
+                  </div>
                 </div>
               </div>
-              {/* end banner text */}
+            </div>
+            <div className="col-lg-6">
+              <div className="hero-visual">
+                <div className="floating-card card-1">
+                  <div className="card-icon">
+                    <i className="fas fa-newspaper"></i>
+                  </div>
+                  <h4>Tech Insights</h4>
+                  <p>Latest industry trends</p>
+                </div>
+                <div className="floating-card card-2">
+                  <div className="card-icon">
+                    <i className="fas fa-code"></i>
+                  </div>
+                  <h4>API Tutorials</h4>
+                  <p>Implementation guides</p>
+                </div>
+                <div className="floating-card card-3">
+                  <div className="card-icon">
+                    <i className="fas fa-chart-line"></i>
+                  </div>
+                  <h4>Case Studies</h4>
+                  <p>Real-world success</p>
+                </div>
+                <PulseGlobe />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Blog Header Section with Search */}
-      <section className="py-5 bg-light">
+      {/* BLOGS SECTION WITH COMPLETELY REDESIGNED LAYOUT */}
+      <section className="blog-section pt-0 position-relative">
         <div className="container position-relative z-index-9">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="section-heading5 wow fadeInUp" data-wow-delay=".1s">
-                <h2 className="mb-0 h1 z-index-9 position-relative">Our Blog</h2>
-                <span className="title-shape"></span>
-                <p className="mt-4 text-muted">Discover insights, updates, and expert knowledge about location-based technologies and solutions.</p>
+          <div className="section-heading text-center mb-5">
+            <span className="badge rounded-pill bg-primary-soft px-3 py-2 mb-3">
+              <i className="fas fa-blog me-2"></i> Latest Blogs
+            </span>
+            <h2 className="display-5 fw-bold">Blogs</h2>
+            <div className="heading-line mx-auto"></div>
+            <p
+              className="mx-auto mb-0 text-secondary"
+              style={{ maxWidth: "800px" }}
+            >
+              Explore our latest articles on geospatial intelligence, AI
+              applications, and location-based services. From technical
+              tutorials to industry insights, we cover it all to help you stay
+              informed and inspired.
+            </p>
+          </div>
+          <div className="row g-4">
+            {/* Blog Post 1 - Google Maps Integration - Updated to match Google Cloud blog style */}
+            <div className="col-lg-12">
+              <div
+                className="blog-card-modern position-relative overflow-hidden"
+                style={{
+                  borderRadius: "16px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                  border: "none",
+                }}
+              >
+                <div className="blog-header position-relative">
+                  <div
+                    className="blog-img"
+                    style={{
+                      background: `url(${gpsImage}) no-repeat center center`,
+                      backgroundSize: "cover",
+                      height: "300px",
+                      borderTopLeftRadius: "16px",
+                      borderTopRightRadius: "16px",
+                    }}
+                  >
+                    <div
+                      className="overlay position-absolute top-0 start-0 w-100 h-100"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3))",
+                      }}
+                    ></div>
+                    <div className="blog-title-container position-absolute bottom-0 start-0 w-100 p-5 text-white">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="me-4">
+                          <span className="bg-primary text-white py-2 px-4 rounded-pill fw-bold">
+                            Technology
+                          </span>
+                        </div>
+                      </div>
+                      <h2 className="blog-title display-6 fw-bold text-white mb-0">
+                        Mapping the Future: How Geosentry Leverages Google Maps
+                        for Real-Time Location Intelligence
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-content p-5">
+                  <div className="blog-intro mb-5">
+                    <div className="d-flex align-items-center mb-4">
+                      <div
+                        className="icon-wrapper d-flex align-items-center justify-content-center me-4"
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "50%",
+                          background: "rgba(52, 152, 219, 0.1)",
+                          border: "2px dashed #3498db",
+                        }}
+                      >
+                        <i className="fas fa-map-marked-alt fa-2x text-primary"></i>
+                      </div>
+                      <div>
+                        <h5 className="mb-0 fw-bold">
+                          Google Maps Integration
+                        </h5>
+                        <p className="mb-0 text-muted">
+                          Powering location intelligence
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mb-4">
+                      At Geosentry, we're reimagining how location data is used
+                      in logistics, infrastructure, and smart city planning.
+                      Behind the scenes of our powerful geospatial intelligence
+                      platform lies a deep integration with Google Maps Platform
+                      — helping us build immersive, real-time, and scalable
+                      mapping experiences.
+                    </p>
+                  </div>
+
+                  <div className="row g-4">
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-map fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Google Maps SDK</h5>
+                            <p className="mb-0">
+                              We use the Google Maps JavaScript and Android SDKs
+                              to visualize the movement of vehicles, field
+                              teams, and assets with precise positioning and
+                              intuitive UI overlays.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-location-arrow fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Geocoding APIs</h5>
+                            <p className="mb-0">
+                              Address normalization and route labeling are
+                              powered by Google's Geocoding API, converting raw
+                              coordinates into usable street-level data in
+                              milliseconds.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-route fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Directions API</h5>
+                            <p className="mb-0">
+                              One of the core features of our platform is
+                              multi-vehicle routing and ETA prediction, all made
+                              possible by the Google Directions API.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-map-pin fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Places API</h5>
+                            <p className="mb-0">
+                              By integrating the Google Places API, we enrich
+                              location data with nearby landmarks, categories,
+                              and user-friendly names.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="blog-search-box position-relative">
-                <input type="text" id="blog-search-input" className="form-control py-3 px-4 rounded-pill" placeholder="Search articles..." />
-                <button className="btn position-absolute end-0 top-0 bottom-0 rounded-pill px-4">
-                  <i className="fas fa-search"></i>
-                </button>
-              </div>
-              <div className="blog-categories mt-3 d-flex flex-wrap justify-content-lg-end">
-                <a href="#!" className="badge bg-primary rounded-pill py-2 px-3 me-2 mb-2">All</a>
-                <a href="#!" className="badge bg-light text-dark rounded-pill py-2 px-3 me-2 mb-2">Technology</a>
-                <a href="#!" className="badge bg-light text-dark rounded-pill py-2 px-3 me-2 mb-2">Integration</a>
-                <a href="#!" className="badge bg-light text-dark rounded-pill py-2 px-3 me-2 mb-2">Cloud</a>
-                <a href="#!" className="badge bg-light text-dark rounded-pill py-2 px-3 mb-2">Maps</a>
+
+            {/* Blog Post 2 - Google Cloud Integration */}
+            <div className="col-lg-12">
+              <div
+                className="blog-card-modern position-relative overflow-hidden"
+                style={{
+                  borderRadius: "16px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                  border: "none",
+                  marginTop: "40px",
+                }}
+              >
+                <div className="blog-header position-relative">
+                  <div
+                    className="blog-img"
+                    style={{
+                      background: `url(${geocodingImage}) no-repeat center center`,
+                      backgroundSize: "cover",
+                      height: "300px",
+                      borderTopLeftRadius: "16px",
+                      borderTopRightRadius: "16px",
+                    }}
+                  >
+                    <div className="blog-title-container position-absolute bottom-0 start-0 w-100 p-5 text-white">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="me-4">
+                          <span className="bg-primary text-white py-2 px-4 rounded-pill fw-bold">
+                            Cloud Technology
+                          </span>
+                        </div>
+                      </div>
+                      <h2 className="blog-title display-6 fw-bold text-white mb-0">
+                        Scaling Geosentry with Google Cloud: A Cloud-Native
+                        Approach to Geospatial Intelligence
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-content p-5">
+                  <div className="blog-intro mb-5">
+                    <div className="d-flex align-items-center mb-4">
+                      <div
+                        className="icon-wrapper d-flex align-items-center justify-content-center me-4"
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "50%",
+                          background: "rgba(52, 152, 219, 0.1)",
+                          border: "2px dashed #3498db",
+                        }}
+                      >
+                        <i className="fas fa-cloud fa-2x text-primary"></i>
+                      </div>
+                      <div>
+                        <h5 className="mb-0 fw-bold">
+                          Google Cloud Integration
+                        </h5>
+                        <p className="mb-0 text-muted">
+                          Powering our geospatial platform
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mb-4">
+                      As a startup focused on solving real-world challenges
+                      using geospatial data, we at Geosentry needed a cloud
+                      infrastructure that could scale with our vision. Google
+                      Cloud has been our platform of choice from day one —
+                      enabling us to innovate faster, stay secure, and deliver
+                      real-time intelligence to our customers.
+                    </p>
+                  </div>
+
+                  <div className="row g-4">
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-database fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Firestore</h5>
+                            <p className="mb-0">
+                              Every vehicle breadcrumb, status update, and event
+                              log is stored in Google Firestore
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-code fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Cloud Functions</h5>
+                            <p className="mb-0">
+                              We automate alerts using Google Cloud Functions
+                              for serverless workflows
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-chart-bar fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">BigQuery</h5>
+                            <p className="mb-0">
+                              Generate heatmaps, trip summaries, and usage
+                              patterns using Google BigQuery
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-exchange-alt fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">Cloud Pub/Sub</h5>
+                            <p className="mb-0">
+                              We stream GPS data from thousands of devices via
+                              MQTT to Cloud Pub/Sub
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div
+                        className="service-card p-4 h-100"
+                        style={{
+                          borderRadius: "16px",
+                          background: "rgba(52, 152, 219, 0.05)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <div className="d-flex">
+                          <div className=" me-4">
+                            <div
+                              className="icon-bg d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "60px",
+                                height: "60px",
+                                borderRadius: "16px",
+                                background: "rgba(52, 152, 219, 0.1)",
+                              }}
+                            >
+                              <i className="fas fa-shield-alt fa-lg text-primary"></i>
+                            </div>
+                          </div>
+                          <div className="service-content">
+                            <h5 className="fw-bold mb-2">
+                              Cloud Monitoring & IAM
+                            </h5>
+                            <p className="mb-0">
+                              Ensure uptime, monitor usage spikes, and enforce
+                              strict access policies
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Featured Blog Post Carousel */}
-      <section className="py-0">
-        <div className="container-fluid px-0">
-          <div className="featured-carousel owl-carousel owl-theme">
-            {/* Featured Item 1 */}
-            <div className="item">
-              <div className="featured-blog-post position-relative">
-                <div className="featured-image" style={{ 
-                  backgroundImage: "url('/img/bg/cloud-bg.jpg')",
-                  height: "500px",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}>
-                  <div className="overlay" style={{ 
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0
-                  }}></div>
-                </div>
-                <div className="featured-content position-absolute bottom-0 start-0 p-5 w-100">
-                  <div className="featured-meta mb-3">
-                    <span className="badge bg-primary me-2">Cloud</span>
-                    <span className="text-white"><i className="far fa-calendar-alt me-1"></i> May 15, 2025</span>
-                    <span className="text-white ms-3"><i className="far fa-clock me-1"></i> 5 min read</span>
-                  </div>
-                  <h2 className="featured-title text-white mb-3">Scaling Geosentry with Google Cloud: A Cloud-Native Approach to Geospatial Intelligence</h2>
-                  <p className="featured-excerpt text-white mb-4">As a startup focused on solving real-world challenges using geospatial data, we at Geosentry needed a cloud infrastructure that could scale with our vision.</p>
-                  <a href="#!" className="btn btn-light rounded-pill px-4 py-2">Read More <i className="fas fa-arrow-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-
-            {/* Featured Item 2 */}
-            <div className="item">
-              <div className="featured-blog-post position-relative">
-                <div className="featured-image" style={{ 
-                  backgroundImage: "url('/img/content/map.png')",
-                  height: "500px",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}>
-                  <div className="overlay" style={{ 
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0
-                  }}></div>
-                </div>
-                <div className="featured-content position-absolute bottom-0 start-0 p-5 w-100">
-                  <div className="featured-meta mb-3">
-                    <span className="badge bg-primary me-2">Maps</span>
-                    <span className="text-white"><i className="far fa-calendar-alt me-1"></i> May 10, 2025</span>
-                    <span className="text-white ms-3"><i className="far fa-clock me-1"></i> 7 min read</span>
-                  </div>
-                  <h2 className="featured-title text-white mb-3">Mapping the Future: How Geosentry Leverages Google Maps for Real-Time Location Intelligence</h2>
-                  <p className="featured-excerpt text-white mb-4">At Geosentry, we're reimagining how location data is used in logistics, infrastructure, and smart city planning.</p>
-                  <a href="#!" className="btn btn-light rounded-pill px-4 py-2">Read More <i className="fas fa-arrow-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div
+          className="shape-1 position-absolute bottom-0 start-0"
+          style={{ opacity: "0.1" }}
+        >
+          <img src="/src/assets/img/shapes/01.png" alt="shape" />
+        </div>
+        <div
+          className="shape-2 position-absolute top-50 end-0"
+          style={{ opacity: "0.1" }}
+        >
+          <img src="/src/assets/img/shapes/02.png" alt="shape" />
         </div>
       </section>
 
-      {/* Blog Grid Section */}
-      <section className="py-5">
+      {/* Updated Call to Action */}
+      <section className="modern-cta">
+        <div className="cta-background-animation">
+          <div className="animated-circle circle-1"></div>
+          <div className="animated-circle circle-2"></div>
+          <div className="animated-circle circle-3"></div>
+        </div>
+
         <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="blog-grid">
-                <div className="row g-4">
-                  {/* Blog Card 1 */}
-                  <div className="col-md-6">
-                    <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                      <div className="blog-img position-relative">
-                        <img src="/img/content/map.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                        <div className="blog-date position-absolute top-0 end-0 bg-primary text-white py-2 px-3 m-3 rounded">
-                          <span className="d-block text-center">15</span>
-                          <span className="d-block text-center">May</span>
-                        </div>
-                      </div>
-                      <div className="blog-content p-4">
-                        <div className="blog-meta mb-3">
-                          <span className="me-3"><i className="far fa-user me-1"></i> By Admin</span>
-                          <span><i className="far fa-comments me-1"></i> 5 Comments</span>
-                        </div>
-                        <h3 className="blog-title h5 mb-3">Mapping the Future: How Geosentry Leverages Google Maps</h3>
-                        <p className="blog-excerpt text-muted mb-3">At Geosentry, we're reimagining how location data is used in logistics, infrastructure, and smart city planning.</p>
-                        <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More <i className="fas fa-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Blog Card 2 */}
-                  <div className="col-md-6">
-                    <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                      <div className="blog-img position-relative">
-                        <img src="/img/bg/cloud-bg.jpg" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                        <div className="blog-date position-absolute top-0 end-0 bg-primary text-white py-2 px-3 m-3 rounded">
-                          <span className="d-block text-center">10</span>
-                          <span className="d-block text-center">May</span>
-                        </div>
-                      </div>
-                      <div className="blog-content p-4">
-                        <div className="blog-meta mb-3">
-                          <span className="me-3"><i className="far fa-user me-1"></i> By Admin</span>
-                          <span><i className="far fa-comments me-1"></i> 3 Comments</span>
-                        </div>
-                        <h3 className="blog-title h5 mb-3">Scaling Geosentry with Google Cloud: A Cloud-Native Approach</h3>
-                        <p className="blog-excerpt text-muted mb-3">As a startup focused on solving real-world challenges using geospatial data, we needed a cloud infrastructure that could scale with our vision.</p>
-                        <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More <i className="fas fa-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Blog Card 3 */}
-                  <div className="col-md-6">
-                    <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                      <div className="blog-img position-relative">
-                        <img src="/img/content/geofencing-card.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                        <div className="blog-date position-absolute top-0 end-0 bg-primary text-white py-2 px-3 m-3 rounded">
-                          <span className="d-block text-center">05</span>
-                          <span className="d-block text-center">May</span>
-                        </div>
-                      </div>
-                      <div className="blog-content p-4">
-                        <div className="blog-meta mb-3">
-                          <span className="me-3"><i className="far fa-user me-1"></i> By Admin</span>
-                          <span><i className="far fa-comments me-1"></i> 7 Comments</span>
-                        </div>
-                        <h3 className="blog-title h5 mb-3">The Power of Geofencing in Modern Fleet Management</h3>
-                        <p className="blog-excerpt text-muted mb-3">Discover how geofencing technology is revolutionizing fleet management and enhancing operational efficiency.</p>
-                        <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More <i className="fas fa-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Blog Card 4 */}
-                  <div className="col-md-6">
-                    <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                      <div className="blog-img position-relative">
-                        <img src="/img/content/fleet-mangement-card.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                        <div className="blog-date position-absolute top-0 end-0 bg-primary text-white py-2 px-3 m-3 rounded">
-                          <span className="d-block text-center">01</span>
-                          <span className="d-block text-center">May</span>
-                        </div>
-                      </div>
-                      <div className="blog-content p-4">
-                        <div className="blog-meta mb-3">
-                          <span className="me-3"><i className="far fa-user me-1"></i> By Admin</span>
-                          <span><i className="far fa-comments me-1"></i> 2 Comments</span>
-                        </div>
-                        <h3 className="blog-title h5 mb-3">AI-Powered Route Optimization: The Future of Logistics</h3>
-                        <p className="blog-excerpt text-muted mb-3">Learn how artificial intelligence is transforming route planning and optimization for modern logistics operations.</p>
-                        <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More <i className="fas fa-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Pagination */}
-                <nav className="mt-5">
-                  <ul className="pagination justify-content-center">
-                    <li className="page-item disabled">
-                      <a className="page-link" href="#!" tabIndex="-1" aria-disabled="true"><i className="fas fa-chevron-left"></i></a>
-                    </li>
-                    <li className="page-item active"><a className="page-link" href="#!">1</a></li>
-                    <li className="page-item"><a className="page-link" href="#!">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#!">3</a></li>
-                    <li className="page-item">
-                      <a className="page-link" href="#!"><i className="fas fa-chevron-right"></i></a>
-                    </li>
-                  </ul>
-                </nav>
+          <div className="cta-content">
+            <div className="row align-items-center">
+              <div className="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <span className="cta-tag">Connect With Us</span>
+                <h2 className="cta-heading">Powered by Google Cloud</h2>
+                <p className="cta-text">
+                  As a proudly funded startup, Geosentry continues to build on
+                  top of Google's powerful ecosystem. If you're solving hard
+                  problems in the real world, there's no better partner than
+                  Google Cloud to bring your vision to life.
+                </p>
               </div>
-            </div>
-            
-            {/* Sidebar */}
-            <div className="col-lg-4 mt-5 mt-lg-0">
-              <div className="blog-sidebar">
-                {/* About Widget */}
-                <div className="sidebar-widget bg-light p-4 rounded-3 mb-4">
-                  <h4 className="widget-title border-bottom pb-3 mb-3">About Geosentry</h4>
-                  <p>Geosentry is a leading provider of AI-powered GPS tracking and geofencing solutions built on Google Cloud Platform.</p>
-                  <a href="/about" className="btn btn-sm btn-primary rounded-pill">Learn More</a>
-                </div>
-                
-                {/* Recent Posts Widget */}
-                <div className="sidebar-widget bg-light p-4 rounded-3 mb-4">
-                  <h4 className="widget-title border-bottom pb-3 mb-3">Recent Posts</h4>
-                  <div className="recent-post d-flex mb-3">
-                    <div className="recent-post-img me-3">
-                      <img src="/img/content/map.png" alt="Recent Post" className="img-fluid rounded" style={{width: "70px", height: "70px", objectFit: "cover"}} />
-                    </div>
-                    <div className="recent-post-content">
-                      <h6 className="mb-1"><a href="#!" className="text-dark">Mapping the Future with Google Maps</a></h6>
-                      <span className="text-muted small"><i className="far fa-calendar-alt me-1"></i> May 15, 2025</span>
-                    </div>
-                  </div>
-                  <div className="recent-post d-flex mb-3">
-                    <div className="recent-post-img me-3">
-                      <img src="/img/bg/cloud-bg.jpg" alt="Recent Post" className="img-fluid rounded" style={{width: "70px", height: "70px", objectFit: "cover"}} />
-                    </div>
-                    <div className="recent-post-content">
-                      <h6 className="mb-1"><a href="#!" className="text-dark">Scaling with Google Cloud</a></h6>
-                      <span className="text-muted small"><i className="far fa-calendar-alt me-1"></i> May 10, 2025</span>
-                    </div>
-                  </div>
-                  <div className="recent-post d-flex">
-                    <div className="recent-post-img me-3">
-                      <img src="/img/content/geofencing-card.png" alt="Recent Post" className="img-fluid rounded" style={{width: "70px", height: "70px", objectFit: "cover"}} />
-                    </div>
-                    <div className="recent-post-content">
-                      <h6 className="mb-1"><a href="#!" className="text-dark">The Power of Geofencing</a></h6>
-                      <span className="text-muted small"><i className="far fa-calendar-alt me-1"></i> May 05, 2025</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Categories Widget */}
-                <div className="sidebar-widget bg-light p-4 rounded-3 mb-4">
-                  <h4 className="widget-title border-bottom pb-3 mb-3">Categories</h4>
-                  <ul className="list-unstyled mb-0">
-                    <li className="border-bottom pb-2 mb-2"><a href="#!" className="d-flex justify-content-between text-dark"><span>Technology</span> <span className="badge bg-primary rounded-pill">5</span></a></li>
-                    <li className="border-bottom pb-2 mb-2"><a href="#!" className="d-flex justify-content-between text-dark"><span>Integration</span> <span className="badge bg-primary rounded-pill">3</span></a></li>
-                    <li className="border-bottom pb-2 mb-2"><a href="#!" className="d-flex justify-content-between text-dark"><span>Cloud</span> <span className="badge bg-primary rounded-pill">2</span></a></li>
-                    <li><a href="#!" className="d-flex justify-content-between text-dark"><span>Maps</span> <span className="badge bg-primary rounded-pill">4</span></a></li>
-                  </ul>
-                </div>
-                
-                {/* Tags Widget */}
-                <div className="sidebar-widget bg-light p-4 rounded-3">
-                  <h4 className="widget-title border-bottom pb-3 mb-3">Tags</h4>
-                  <div className="tags">
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">GPS</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">Tracking</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">Geofencing</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">Cloud</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">AI</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">Maps</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 me-2 mb-2 d-inline-block">API</a>
-                    <a href="#!" className="badge bg-white text-dark border py-2 px-3 mb-2 d-inline-block">SDK</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Related Blog Posts Carousel */}
-      <section className="py-5 bg-light">
-        <div className="container">
-          <div className="section-heading5 text-center wow fadeInUp mb-5" data-wow-delay=".1s">
-            <h2 className="mb-0 h2 z-index-9 position-relative">You May Also Like</h2>
-            <span className="title-shape"></span>
-          </div>
-          
-          <div className="blog-carousel owl-carousel owl-theme">
-            {/* Related Blog 1 */}
-            <div className="item">
-              <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                <div className="blog-img">
-                  <img src="/img/content/3d-view-map.jpg" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                </div>
-                <div className="blog-content p-4">
-                  <div className="blog-meta mb-3">
-                    <span className="me-3"><i className="far fa-calendar-alt me-1"></i> Apr 25, 2025</span>
-                    <span><i className="far fa-comments me-1"></i> 4 Comments</span>
-                  </div>
-                  <h3 className="blog-title h5 mb-3">3D Mapping: The Next Frontier in Location Visualization</h3>
-                  <p className="blog-excerpt text-muted mb-3">Explore how 3D mapping is transforming the way we visualize and interact with spatial data.</p>
-                  <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More</a>
-                </div>
+              <div className="col-lg-4 text-center text-lg-end">
+                <a href="/contact" className="cta-button primary">
+                  <span>Contact Us</span>
+                  <i className="fas fa-arrow-right"></i>
+                </a>
               </div>
-            </div>
-            
-            {/* Related Blog 2 */}
-            <div className="item">
-              <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                <div className="blog-img">
-                  <img src="/img/content/api-and-sdk.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                </div>
-                <div className="blog-content p-4">
-                  <div className="blog-meta mb-3">
-                    <span className="me-3"><i className="far fa-calendar-alt me-1"></i> Apr 20, 2025</span>
-                    <span><i className="far fa-comments me-1"></i> 6 Comments</span>
-                  </div>
-                  <h3 className="blog-title h5 mb-3">Integrating Location Services: API vs SDK Approaches</h3>
-                  <p className="blog-excerpt text-muted mb-3">A comprehensive comparison of API and SDK integration methods for location-based services.</p>
-                  <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More</a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Related Blog 3 */}
-            <div className="item">
-              <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                <div className="blog-img">
-                  <img src="/img/content/gps-tracking.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                </div>
-                <div className="blog-content p-4">
-                  <div className="blog-meta mb-3">
-                    <span className="me-3"><i className="far fa-calendar-alt me-1"></i> Apr 15, 2025</span>
-                    <span><i className="far fa-comments me-1"></i> 3 Comments</span>
-                  </div>
-                  <h3 className="blog-title h5 mb-3">The Evolution of GPS Tracking Technology</h3>
-                  <p className="blog-excerpt text-muted mb-3">From basic location tracking to advanced AI-powered insights: the journey of GPS technology.</p>
-                  <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More</a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Related Blog 4 */}
-            <div className="item">
-              <div className="blog-card h-100 shadow-sm rounded-3 overflow-hidden">
-                <div className="blog-img">
-                  <img src="/img/content/customizable-Geofencing.png" alt="Blog" className="img-fluid w-100" style={{height: "200px", objectFit: "cover"}} />
-                </div>
-                <div className="blog-content p-4">
-                  <div className="blog-meta mb-3">
-                    <span className="me-3"><i className="far fa-calendar-alt me-1"></i> Apr 10, 2025</span>
-                    <span><i className="far fa-comments me-1"></i> 5 Comments</span>
-                  </div>
-                  <h3 className="blog-title h5 mb-3">Advanced Geofencing Techniques for Business Applications</h3>
-                  <p className="blog-excerpt text-muted mb-3">Discover innovative ways businesses are leveraging geofencing to enhance operations and customer experiences.</p>
-                  <a href="#!" className="btn btn-sm btn-outline-primary rounded-pill">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="footer-bottom-bg parallax fadeInUp primary-overlay-90 cover-background md"
-        data-overlay-dark="9"
-      >
-        <div className="container">
-          <div className="row position-relative z-index-1 align-items-center">
-            <div className="col-lg-9 text-center text-lg-start mb-3 mb-lg-0">
-              <h6 className="text-white">
-                As a proudly funded startup, Geosentry continues to build on top
-                of Google’s powerful ecosystem. If you're solving hard problems
-                in the real world, there’s no better partner than Google Cloud
-                to bring your vision to life.
-              </h6>
-            </div>
-            <div className="col-lg-3 text-center text-lg-end">
-              <a href="mailto:support@geosentry.ai" className="butn style-two">
-                <span>Contact Us</span>
-              </a>
             </div>
           </div>
         </div>

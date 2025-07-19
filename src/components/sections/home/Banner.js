@@ -103,7 +103,7 @@ const Banner = () => {
     <div className="modern-banner">
       <div id="particles-js" className="particles-container"></div>
 
-      <div className="banner-content container">
+      <div className="banner-content container py-5">
         <div className="row align-items-center justify-content-between">
           <div className="col-lg-6 col-md-12 text-content">
             <h1 className="hero-title">
@@ -119,20 +119,19 @@ const Banner = () => {
             </div>
 
             <div className="banner-cta">
-              <div>
-                <a href="/service" className="cta-button secondary">
-                  <span>Explore Services</span>
-                </a>
-              </div>
-              <div>
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="cta-button primary"
-                >
-                  <span>Get Demo</span>
-                  <i className="fas fa-arrow-right"></i>
-                </button>
-              </div>
+              <a
+                href="/service/fleet-management"
+                className="cta-button secondary"
+              >
+                <span>Explore Services</span>
+              </a>
+              <button
+                onClick={() => setShowModal(true)}
+                className="cta-button primary"
+              >
+                <span>Get Demo</span>
+                <i className="fas fa-arrow-right"></i>
+              </button>
             </div>
 
             <div className="banner-features">

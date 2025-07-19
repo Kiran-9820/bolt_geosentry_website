@@ -2,15 +2,16 @@ import React from "react";
 
 const SdkApi = () => {
   return (
-    <section className="modern-sdk-section py-5">
+    <section className="modern-sdk-section py-4">
       <div className="container">
         <div className="section-heading text-center mb-5">
-          <h2 className="display-4 fw-bold">Our SDK & APIs</h2>
-          <p className="lead mx-auto">
+          <h2 className=" section-title mb-3 h2 fw-bold text-dark">
+            Our SDK & APIs
+          </h2>
+          <p className="section-description">
             Powerful tools to integrate location intelligence into your
             applications
           </p>
-          <div className="title-separator mx-auto"></div>
         </div>
 
         <div className="row g-4">
@@ -27,9 +28,6 @@ const SdkApi = () => {
                   Empower your development journey and start building the future
                   today
                 </p>
-                <a href="#!" className="api-link">
-                  Explore SDK <i className="fas fa-chevron-right"></i>
-                </a>
               </div>
             </div>
           </div>
@@ -47,9 +45,6 @@ const SdkApi = () => {
                   Discover forward geocoding, reverse geocoding, and IP
                   geocoding APIs
                 </p>
-                <a href="#!" className="api-link">
-                  Explore APIs <i className="fas fa-chevron-right"></i>
-                </a>
               </div>
             </div>
           </div>
@@ -70,9 +65,6 @@ const SdkApi = () => {
                   Explore our geofencing API for boundary setting and
                   location-based controls
                 </p>
-                <a href="#!" className="api-link">
-                  Explore APIs <i className="fas fa-chevron-right"></i>
-                </a>
               </div>
             </div>
           </div>
@@ -90,9 +82,6 @@ const SdkApi = () => {
                   Discover APIs for distance calculation, matrix operations,
                   route optimization
                 </p>
-                <a href="#!" className="api-link">
-                  Explore APIs <i className="fas fa-chevron-right"></i>
-                </a>
               </div>
             </div>
           </div>

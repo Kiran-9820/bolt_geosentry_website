@@ -1,21 +1,50 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ServicesPage = () => {
   useEffect(() => {
     document.title =
       "Geosentry: AI-Powered Geo Services for Geofencing, Fleet Management, Geo Tracking, API, and SDK Integration";
     window.scrollTo(0, 0);
+
+    // Initialize animation on scroll
+    const scrollElements = document.querySelectorAll(".scroll-animation");
+    
+    const elementInView = (el, dividend = 1) => {
+      const elementTop = el.getBoundingClientRect().top;
+      return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+      );
+    };
+
+    const displayScrollElement = (element) => {
+      element.classList.add("animate");
+    };
+
+    const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+          displayScrollElement(el);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation(); // Initial check on load
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollAnimation);
+    };
   }, []);
 
   return (
-    <main>
+    <main className="modern-main">
       {/* PAGE TITLE */}
       <section className="p-0 bg-primary-solid">
-        {/* banner container */}
         <div className="container d-table">
           <div className="d-table-cell py-6 py-lg-6">
             <div className="row align-items-center z-index-9 position-relative">
-              {/* left banner text */}
               <div className="col-lg-12 mb-4 mb-lg-0">
                 <div className="header-text">
                   <h1 className="text-white text-center service-header mb-1-6 mb-md-1-9">
@@ -24,549 +53,167 @@ const ServicesPage = () => {
                   </h1>
                 </div>
               </div>
-              {/* end banner text */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Fleet Management Section */}
-      <section className="md-home bg-light-grey border-bottom border-color-light-dark pb-0">
-        <div className="text-center wow fadeIn" data-wow-delay=".2s">
-          <h2 className="mb-0 h1 text-dark">
-            Discover Our Exclusive Business Solutions
-          </h2>
-        </div>
-        <div className="container mt-4">
-          <div className="row align-items-center">
-            <div className="col-lg-7 col-md-12 order-2 order-lg-1">
-              <div className="pe-0 pe-lg-5">
-                <h2 className="mx-md-auto ms-0 text-center text-lg-start h3 mb-4">
-                  Streamlined Fleet Management
-                </h2>
-                <div id="accordionFleet" className="accordion-style01">
-                  <div className="card">
-                    <div className="card-header" id="headingFleetOne">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link">
-                          <span className="counts">1</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFleetOne"
-                            aria-expanded="true"
-                            aria-controls="collapseFleetOne"
-                          >
-                            What is Streamlined Fleet Management with Geosentry
-                            ?
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseFleetOne"
-                      className="collapse show"
-                      aria-labelledby="headingFleetOne"
-                      data-bs-parent="#accordionFleet"
-                    >
-                      <div className="card-body">
-                        Geosentry leverages state-of-the-art AI technology for
-                        effortless fleet management, allowing precise tracking
-                        and maintenance of a diverse array of vehicles. This
-                        advanced approach optimises efficiency, saving both time
-                        and costs with innovative technological solutions.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-header" id="headingFleetTwo">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link collapsed">
-                          <span className="counts">2</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFleetTwo"
-                            aria-expanded="false"
-                            aria-controls="collapseFleetTwo"
-                          >
-                            Features of Geosentry's Streamlined Fleet Management
-                            Product
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseFleetTwo"
-                      className="collapse"
-                      aria-labelledby="headingFleetTwo"
-                      data-bs-parent="#accordionFleet"
-                    >
-                      <div className="card-body">
-                        <ul className="list-style7">
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Real-time Vehicle Tracking:</strong>{" "}
-                            Geosentry utilises GPS technology for continuous,
-                            real-time tracking of your fleet's vehicles. This
-                            functionality enhances operational safety, optimizes
-                            routes for efficiency, and monitors driving
-                            patterns, ensuring a comprehensive approach to fleet
-                            management.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Route Optimisation:</strong> Geosentry can
-                            help you optimise your routes to save time and fuel.
-                            The software uses historical data to calculate the
-                            most efficient routes for your vehicles, taking into
-                            account factors such as traffic conditions, road
-                            closures, and more.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Maintenance Alerts:</strong> Geosentry's
-                            maintenance alerts ensure fleet management by
-                            notifying you when your vehicles require
-                            maintenance, utilizing simple technology to prevent
-                            breakdowns and maximize vehicle lifespan.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Reports and Analytics:</strong> Utilise
-                            Geosentry's data-driven reports and analytics to
-                            make intelligent decisions for your fleet. By
-                            examining essential metrics, you can optimise the
-                            overall efficiency of your vehicles and operations.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-5 col-md-12 order-1 order-lg-2 mb-5 mb-lg-0 text-center text-lg-end">
-              <img
-                src="/img/content/fleet-management-3.png"
-                className="img-effect img-service"
-                alt="Fleet Management"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GPS Tracking Section */}
-      <section className="p-0">
+      {/* Service Introduction */}
+      <section className="section-container">
         <div className="container">
-          <div className="row flex-row-reverse align-items-center">
-            <div className="col-lg-7 col-md-12 order-2 order-lg-1">
-              <div className="pe-0 ps-lg-5">
-                <h2 className="mx-md-auto ms-0 text-center text-lg-start h3 mb-4">
-                  Real-time GPS Tracking
-                </h2>
-                <div id="accordionGPS" className="accordion-style01">
-                  <div className="card">
-                    <div className="card-header" id="headingGPSOne">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link">
-                          <span className="counts">1</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseGPSOne"
-                            aria-expanded="true"
-                            aria-controls="collapseGPSOne"
-                          >
-                            What is Real-time GPS Tracking with Geosentry?
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseGPSOne"
-                      className="collapse show"
-                      aria-labelledby="headingGPSOne"
-                      data-bs-parent="#accordionGPS"
-                    >
-                      <div className="card-body">
-                        Geosentry provides real-time GPS tracking, which is
-                        similar to having a high-tech map that shows you where
-                        vehicles, important items, or people are right now. It
-                        constantly updates you on their specific location,
-                        allowing you to better manage their situation, keep them
-                        safe, and make wiser decisions. It helps ensure that
-                        important information gets to the appropriate location,
-                        and it also helps you understand how people move around.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-header" id="headingGPSTwo">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link collapsed">
-                          <span className="counts">2</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseGPSTwo"
-                            aria-expanded="false"
-                            aria-controls="collapseGPSTwo"
-                          >
-                            Features of Geosentry's GPS Tracking Product
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseGPSTwo"
-                      className="collapse"
-                      aria-labelledby="headingGPSTwo"
-                      data-bs-parent="#accordionGPS"
-                    >
-                      <div className="card-body">
-                        <ul className="list-style7">
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong> Effortless Deployment:</strong> Geosentry's
-                            GPS trackers function like plug-and-play devices,
-                            allowing for quick installation in just a few
-                            minutes without the need for specialized hardware or
-                            software.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Pinpoint Precision:</strong> Geosentry's
-                            trackers provide highly accurate location data with
-                            pinpoint precision, ensuring hassle-free and
-                            actionable insights for effective monitoring and
-                            management.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Custom Virtual Boundaries:</strong>{" "}
-                            Geosentry's smart mobile app lets you effortlessly
-                            handle your trackers and stay connected to real-time
-                            information while on the move. Keep tabs on your
-                            assets' locations, establish alerts, and receive
-                            notifications when they enter or exit geo-fenced
-                            areas.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Managing Vehicles Easily:</strong> Geosentry
-                            is a great tool for managing vehicles. You can track
-                            the location of your vehicles, view their speed and
-                            direction, and even get alerts if they exceed speed
-                            limits or enter restricted areas. This information
-                            can help you improve fleet efficiency, reduce fuel
-                            costs, and protect your vehicles from theft.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-5 col-md-12 order-1 order-lg-2 mb-5 mb-lg-0 text-center text-lg-end">
-              <img
-                src="/img/content/gps-tracking.png"
-                alt="GPS Tracking"
-                className="img-effect img-service"
-              />
-            </div>
+          <div className="section-title-container scroll-animation">
+            <div className="section-subtitle">Our Services</div>
+            <h2 className="section-title">Discover Our Exclusive Business Solutions</h2>
+            <div className="title-separator mx-auto"></div>
+            <p className="section-description">
+              Leveraging AI and Google Cloud Platform to transform how businesses track, manage, and optimize their operations.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Geofencing Section */}
-      <section className="md bg-light-grey border-bottom border-color-light-dark p-0">
+      {/* Fleet Management Section - Modernized */}
+      <section className="section-container alternate-bg">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-7 col-md-12 order-2 order-lg-1">
-              <div className="pe-0 pe-lg-5">
-                <h2 className="mx-md-auto ms-0 text-center text-lg-start h3 mb-4">
-                  Customizable Geofencing
-                </h2>
-                <div id="accordionGeofencing" className="accordion-style01">
-                  <div className="card">
-                    <div className="card-header" id="headingGeofencingOne">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link">
-                          <span className="counts">1</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseGeofencingOne"
-                            aria-expanded="true"
-                            aria-controls="collapseGeofencingOne"
-                          >
-                            What is Customizable Geofencing with Geosentry?
-                          </span>
-                        </h5>
-                      </div>
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="service-image-wrapper scroll-animation fade-in-left">
+                <img
+                  src="/img/content/fleet-management-3.png"
+                  className="img-fluid rounded-lg shadow-lg"
+                  alt="Fleet Management"
+                />
+                <div className="image-backdrop"></div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="service-content ps-lg-5 scroll-animation fade-in-right">
+                <div className="service-icon-container mb-4">
+                  <div className="service-icon">
+                    <i className="fas fa-truck"></i>
+                  </div>
+                </div>
+                <h2 className="service-title">Streamlined Fleet Management</h2>
+                <div className="title-separator"></div>
+                <p className="service-description mt-4">
+                  Geosentry leverages state-of-the-art AI technology for
+                  effortless fleet management, allowing precise tracking
+                  and maintenance of a diverse array of vehicles. This
+                  advanced approach optimises efficiency, saving both time
+                  and costs with innovative technological solutions.
+                </p>
+                
+                <div className="service-features mt-4">
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-map-marker-alt"></i>
                     </div>
-                    <div
-                      id="collapseGeofencingOne"
-                      className="collapse show"
-                      aria-labelledby="headingGeofencingOne"
-                      data-bs-parent="#accordionGeofencing"
-                    >
-                      <div className="card-body">
-                        Customisable Geofencing with Geosentry is a cutting-edge
-                        technology that allows organisations to establish and
-                        control virtual borders around physical locations on a
-                        map. With this technology, companies can automate what
-                        happens when something enters or exits specific
-                        locations.
-                      </div>
+                    <div className="feature-content">
+                      <h4>Real-time Vehicle Tracking</h4>
+                      <p>Continuous GPS tracking for enhanced operational safety, optimized routes, and driver behavior monitoring.</p>
                     </div>
                   </div>
-                  <div className="card">
-                    <div className="card-header" id="headingGeofencingTwo">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link collapsed">
-                          <span className="counts">2</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseGeofencingTwo"
-                            aria-expanded="false"
-                            aria-controls="collapseGeofencingTwo"
-                          >
-                            Features of Geosentry's Customisable Geofencing
-                          </span>
-                        </h5>
-                      </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-route"></i>
                     </div>
-                    <div
-                      id="collapseGeofencingTwo"
-                      className="collapse"
-                      aria-labelledby="headingGeofencingTwo"
-                      data-bs-parent="#accordionGeofencing"
-                    >
-                      <div className="card-body">
-                        <ul className="list-style7">
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Create Your Own Zones:</strong> With
-                            Geosentry, you can create custom zones of any shape
-                            or size. This allows you to track and monitor
-                            specific areas, such as loading zones, restricted
-                            areas, or even the perimeter of your property. You
-                            can also use Geosentry to create zones based on
-                            time, so you can track when vehicles enter or leave
-                            specific areas.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Get Instant Alerts:</strong> Geosentry uses
-                            advanced mapping technology to track the movement of
-                            assets and people. When something enters or leaves a
-                            designated zone, you'll receive an instant alert.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Improve Security:</strong> Geosentry boosts
-                            security through customisable geofencing, triggering
-                            alerts for unauthorised entry or exit within
-                            designated zones. This feature is vital for
-                            safeguarding assets and ensuring prompt notification
-                            of any irregularities related to your vehicles.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Learn from Data:</strong> Utilize
-                            Geosentry's customizable geofencing to gather data
-                            insights on how people and assets navigate your
-                            geo-space. Leverage this information to boost
-                            efficiency, spot potential issues, and make informed
-                            decisions for optimizing your geo-space usage.
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="feature-content">
+                      <h4>Route Optimisation</h4>
+                      <p>Save time and fuel with data-driven route optimization that accounts for traffic conditions and road closures.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-tools"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Maintenance Alerts</h4>
+                      <p>Proactive notifications when vehicles require maintenance to prevent breakdowns and extend vehicle lifespans.</p>
                     </div>
                   </div>
                 </div>
+                
+                <div className="mt-4">
+                  <Link to="/service/fleet-management" className="cta-button primary">
+                    Learn More <i className="fas fa-arrow-right ms-2"></i>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-5 col-md-12 order-1 order-lg-2 mb-5 mb-lg-0 text-center text-lg-end">
-              <img
-                src="/img/content/customizable-Geofencing.png"
-                className="img-effect img-service"
-                alt="Customizable Geofencing"
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* API and SDK Section */}
-      <section className="mb-0 p-0">
-        <div className="container mb-0">
-          <div className="row flex-row-reverse align-items-center">
-            <div className="col-lg-7 col-md-8 order-2 order-lg-1">
-              <div className="pe-0 ps-lg-5">
-                <h2 className="mx-md-auto ms-0 text-center text-lg-start h3 mb-4">
-                  API and SDK for Easy Integration
-                </h2>
-                <div id="accordionAPI" className="accordion-style01">
-                  <div className="card">
-                    <div className="card-header" id="headingAPIOne">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link">
-                          <span className="counts">1</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseAPIOne"
-                            aria-expanded="true"
-                            aria-controls="collapseAPIOne"
-                          >
-                            What is API and SDK for Easy Integration with
-                            Geosentry?
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseAPIOne"
-                      className="collapse show"
-                      aria-labelledby="headingAPIOne"
-                      data-bs-parent="#accordionAPI"
-                    >
-                      <div className="card-body">
-                        Our APIs and SDKs seamlessly integrate with other
-                        software, allowing direct communication with Geosentry
-                        and facilitating smooth data sharing for seamless
-                        project collaboration.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-header" id="headingAPITwo">
-                      <div className="mb-0">
-                        <h5 className="btn btn-link collapsed">
-                          <span className="counts">2</span>
-                          <span
-                            className="item-title"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseAPITwo"
-                            aria-expanded="false"
-                            aria-controls="collapseAPITwo"
-                          >
-                            Geosentry's API and SDK for Easy Integration have
-                            these important features
-                          </span>
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      id="collapseAPITwo"
-                      className="collapse"
-                      aria-labelledby="headingAPITwo"
-                      data-bs-parent="#accordionAPI"
-                    >
-                      <div className="card-body">
-                        <ul className="list-style7">
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Streamlined Integration:</strong>{" "}
-                            Geosentry's APIs and SDKs make it easy to connect
-                            Geosentry to other software applications.
-                            Effortlessly, you can start exchanging data between
-                            Geosentry and your existing systems.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Seamless Data Exchange:</strong> Geosentry's
-                            APIs and SDKs support a wide range of data formats,
-                            making it easy to exchange data between Geosentry
-                            and other software applications.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Tailored Functionality:</strong> Geosentry's
-                            APIs and SDKs can be customised to meet your
-                            specific requirements and workflows.
-                          </li>
-                          <li>
-                            <i className="fas fa-check"></i>
-                            <strong>Universal Compatibility:</strong> Integrate
-                            Geosentry with a wide range of software platforms
-                            and solutions.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-5 col-md-8 order-1 order-lg-2 mb-3 mb-lg-0 text-center text-lg-end">
-              <img
-                src="/img/content/api-and-sdk.png"
-                alt="API and SDK"
-                className="img-effect img-service"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Advanced Safety Section */}
-      <section className="parallax cover-background bg-light-grey">
+      {/* GPS Tracking Section - Modernized */}
+      <section className="section-container">
         <div className="container">
-          <div className="text-center section-heading text-dark">
-            <h1>Advanced Safety and In-Depth Data Insights</h1>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 col-md-6">
-              <div className="card card-style09 line-dark">
-                <div className="card-body text-dark">
-                  <div className="mb-2">
-                    <i className="">
-                      <img
-                        src="/img/icon/security (2).svg"
-                        className="img-fluid w-15"
-                        alt="Enhanced Security"
-                      />
-                    </i>
-                  </div>
-                  <h3 className="title text-dark">
-                    Enhanced Security Features
-                  </h3>
-                  <p className="mb-0 display-30">
-                    Using Google Cloud Platform's data security ensures that all
-                    location data is stored securely and can be accessed through
-                    our cloud-based software platform.
-                  </p>
-                </div>
+          <div className="row flex-row-reverse align-items-center">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="service-image-wrapper scroll-animation fade-in-right">
+                <img
+                  src="/img/content/gps-tracking.png"
+                  className="img-fluid rounded-lg shadow-lg"
+                  alt="GPS Tracking"
+                />
+                <div className="image-backdrop"></div>
               </div>
             </div>
-            <div className="col-lg-6 col-md-6">
-              <div className="card card-style09 mb-0">
-                <div className="card-body text-dark">
-                  <div className="mb-3">
-                    <i className="">
-                      <img
-                        src="/img/icon/Detailed_reporting_and_analytics (2).svg"
-                        className="img-fluid w-15"
-                        alt="Detailed Reporting"
-                      />
-                    </i>
+            <div className="col-lg-6">
+              <div className="service-content pe-lg-5 scroll-animation fade-in-left">
+                <div className="service-icon-container mb-4">
+                  <div className="service-icon">
+                    <i className="fas fa-satellite"></i>
                   </div>
-                  <h3 className="title text-dark">
-                    Detailed Reporting and Analytics
-                  </h3>
-                  <p className="mt-2 display-30">
-                    Geosentry's AI-driven algorithms analysis location data to
-                    provide meaningful insights with predictive analytics for
-                    efficiency and behavior analysis to learn about user
-                    patterns.
-                  </p>
+                </div>
+                <h2 className="service-title">Real-time GPS Tracking</h2>
+                <div className="title-separator"></div>
+                <p className="service-description mt-4">
+                  Geosentry provides real-time GPS tracking, which is
+                  similar to having a high-tech map that shows you where
+                  vehicles, important items, or people are right now. It
+                  constantly updates you on their specific location,
+                  allowing you to better manage their situation, keep them
+                  safe, and make wiser decisions.
+                </p>
+                
+                <div className="service-features mt-4">
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-plug"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Effortless Deployment</h4>
+                      <p>Plug-and-play GPS trackers that install in minutes without specialized hardware or software.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-crosshairs"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Pinpoint Precision</h4>
+                      <p>Highly accurate location data for actionable insights and effective monitoring.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-mobile-alt"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Smart Mobile App</h4>
+                      <p>Manage trackers on the go with our mobile app for real-time information access.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-4">
+                  <Link to="/service/gps-tracking" className="cta-button primary">
+                    Learn More <i className="fas fa-arrow-right ms-2"></i>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -574,25 +221,239 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section
-        className="footer-bottom-bg parallax fadeInUp primary-overlay-90 mt-2 cover-background md"
-        data-overlay-dark="9"
-      >
+      {/* Geofencing Section - Modernized */}
+      <section className="section-container alternate-bg">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="service-image-wrapper scroll-animation fade-in-left">
+                <img
+                  src="/img/content/customizable-Geofencing.png"
+                  className="img-fluid rounded-lg shadow-lg"
+                  alt="Customizable Geofencing"
+                />
+                <div className="image-backdrop"></div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="service-content ps-lg-5 scroll-animation fade-in-right">
+                <div className="service-icon-container mb-4">
+                  <div className="service-icon">
+                    <i className="fas fa-border-style"></i>
+                  </div>
+                </div>
+                <h2 className="service-title">Customizable Geofencing</h2>
+                <div className="title-separator"></div>
+                <p className="service-description mt-4">
+                  Customisable Geofencing with Geosentry is a cutting-edge
+                  technology that allows organisations to establish and
+                  control virtual borders around physical locations on a
+                  map. With this technology, companies can automate what
+                  happens when something enters or exits specific
+                  locations.
+                </p>
+                
+                <div className="service-features mt-4">
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-draw-polygon"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Create Custom Zones</h4>
+                      <p>Design geofences of any shape or size to monitor specific areas like loading zones or restricted areas.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-bell"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Instant Alerts</h4>
+                      <p>Receive immediate notifications when assets enter or exit your designated zones.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Enhanced Security</h4>
+                      <p>Protect your assets with alerts for unauthorized entry or exit, ensuring prompt notification of irregularities.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-4">
+                  <Link to="/service/geofencing" className="cta-button primary">
+                    Learn More <i className="fas fa-arrow-right ms-2"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* API and SDK Section - Modernized */}
+      <section className="section-container">
+        <div className="container">
+          <div className="row flex-row-reverse align-items-center">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="service-image-wrapper scroll-animation fade-in-right">
+                <img
+                  src="/img/content/api-and-sdk.png"
+                  className="img-fluid rounded-lg shadow-lg"
+                  alt="API and SDK"
+                />
+                <div className="image-backdrop"></div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="service-content pe-lg-5 scroll-animation fade-in-left">
+                <div className="service-icon-container mb-4">
+                  <div className="service-icon">
+                    <i className="fas fa-code"></i>
+                  </div>
+                </div>
+                <h2 className="service-title">API and SDK for Easy Integration</h2>
+                <div className="title-separator"></div>
+                <p className="service-description mt-4">
+                  Our APIs and SDKs seamlessly integrate with other
+                  software, allowing direct communication with Geosentry
+                  and facilitating smooth data sharing for seamless
+                  project collaboration.
+                </p>
+                
+                <div className="service-features mt-4">
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-plug"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Streamlined Integration</h4>
+                      <p>Easily connect Geosentry to your existing software applications for effortless data exchange.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-exchange-alt"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Seamless Data Exchange</h4>
+                      <p>Support for multiple data formats to facilitate smooth communication between systems.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="service-feature">
+                    <div className="feature-icon">
+                      <i className="fas fa-tools"></i>
+                    </div>
+                    <div className="feature-content">
+                      <h4>Tailored Functionality</h4>
+                      <p>Customizable APIs and SDKs to meet your specific requirements and workflows.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-4">
+                  <Link to="/service/api-sdk" className="cta-button primary">
+                    Learn More <i className="fas fa-arrow-right ms-2"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Safety Section - Modernized */}
+      <section className="section-container alternate-bg">
+        <div className="container">
+          <div className="section-title-container scroll-animation">
+            <div className="section-subtitle">Enhanced Features</div>
+            <h2 className="section-title">Advanced Safety and In-Depth Data Insights</h2>
+            <div className="title-separator mx-auto"></div>
+          </div>
+          
+          <div className="row mt-5">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <div className="feature-box h-100 scroll-animation fade-in-left">
+                <div className="feature-icon">
+                  <img
+                    src="/img/icon/security (2).svg"
+                    alt="Enhanced Security"
+                    className="w-50"
+                  />
+                </div>
+                <h3 className="feature-title">Enhanced Security Features</h3>
+                <p className="feature-text">
+                  Using Google Cloud Platform's data security ensures that all
+                  location data is stored securely and can be accessed through
+                  our cloud-based software platform. Your sensitive location data
+                  is protected with enterprise-grade encryption and security protocols.
+                </p>
+                <ul className="feature-list">
+                  <li>End-to-end encryption</li>
+                  <li>Role-based access control</li>
+                  <li>Secure API endpoints</li>
+                  <li>Regular security audits</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="col-lg-6">
+              <div className="feature-box h-100 scroll-animation fade-in-right">
+                <div className="feature-icon">
+                  <img
+                    src="/img/icon/Detailed_reporting_and_analytics (2).svg"
+                    alt="Detailed Reporting"
+                    className="w-50"
+                  />
+                </div>
+                <h3 className="feature-title">Detailed Reporting and Analytics</h3>
+                <p className="feature-text">
+                  Geosentry's AI-driven algorithms analyze location data to
+                  provide meaningful insights with predictive analytics for
+                  efficiency and behavior analysis to learn about user
+                  patterns. Transform raw data into actionable business intelligence.
+                </p>
+                <ul className="feature-list">
+                  <li>Customizable dashboards</li>
+                  <li>Predictive maintenance alerts</li>
+                  <li>Trend analysis and forecasting</li>
+                  <li>Automated report generation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section - Modernized */}
+      <section className="modern-cta">
+        <div className="cta-background-animation">
+          <div className="animated-circle circle-1"></div>
+          <div className="animated-circle circle-2"></div>
+          <div className="animated-circle circle-3"></div>
+        </div>
         <div className="container">
           <div className="row position-relative z-index-1 align-items-center">
-            <div className="col-lg-9 text-center text-lg-start mb-3 mb-lg-0">
-              <h5 className="text-white">
+            <div className="col-lg-9 text-center text-lg-start mb-4 mb-lg-0">
+              <span className="cta-tag">Get Started</span>
+              <h3 className="cta-heading">Ready to Transform Your Operations?</h3>
+              <p className="cta-text">
                 If you are looking for a GPS tracking solution that is powered
                 by AI and built on the Google Cloud Platform, then Geosentry is
-                the perfect solution for you.
-              </h5>
+                the perfect solution for you. Our team of experts is ready to help
+                you implement the right solution for your business.
+              </p>
             </div>
             <div className="col-lg-3 text-center text-lg-end">
-              <a href="/contact" className="butn style-two">
-                <span className="font-weight-600">
-                  Connect with our experts
-                </span>
+              <a href="/contact" className="cta-button primary">
+                Connect With Experts <i className="fas fa-arrow-right ms-2"></i>
               </a>
             </div>
           </div>

@@ -2,11 +2,14 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section className="services-section">
+    <section className="services-section pt-4 pb-4">
       <div className="container">
         <div className="section-title-container scroll-animation">
           {/* <span className="section-subtitle">Our Services</span> */}
-          <h2 className="section-title">Comprehensive Service Offering</h2>
+          <h2 className="section-title mb-3 h2 fw-bold text-dark">
+            Comprehensive{" "}
+            <span className="text-gradient">Service Offering</span>
+          </h2>
           <p className="section-description">
             Our advanced location-based services help businesses improve
             operational efficiency, enhance customer experiences, and gain

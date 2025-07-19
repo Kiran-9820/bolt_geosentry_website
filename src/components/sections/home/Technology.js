@@ -2,13 +2,19 @@ import React from "react";
 
 const Technology = () => {
   return (
-    <section className="modern-tech-section py-5">
+    <section className="modern-tech-section pt-0">
       <div className="container">
         <div className="text-center section-heading mb-5">
-          <h1 className="display-4 fw-bold">
-            Advanced Technology For Your Success
-          </h1>
-          <div className="title-separator mx-auto"></div>
+          <h2 className="section-title mb-3 h2 fw-bold text-dark">
+            Advanced <span className="text-gradient ">Technology</span> For Your
+            Success
+          </h2>
+          <p className="section-description">
+            Geosentry leverages cutting-edge technology to provide you with
+            powerful location-based services. Our platform is designed to
+            enhance your operations, improve safety, and deliver actionable
+            insights.
+          </p>
         </div>
 
         <div className="row g-4">
@@ -16,7 +22,7 @@ const Technology = () => {
             <div className="modern-card h-100 position-relative">
               <div className="card-accent-border"></div>
               <div className="card-body p-4 p-lg-5">
-                <div className="tech-icon-container mb-4">
+                <div className="card-icon mb-4">
                   <img
                     src="/img/content/NewAI.svg"
                     className="tech-icon"
@@ -32,9 +38,6 @@ const Technology = () => {
                   behavior analysis, understanding user patterns, and receiving
                   real-time safety alerts.
                 </p>
-                <a href="#!" className="btn-link mt-3">
-                  Learn more <i className="fas fa-arrow-right ms-1"></i>
-                </a>
               </div>
             </div>
           </div>
@@ -43,7 +46,7 @@ const Technology = () => {
             <div className="modern-card h-100 position-relative">
               <div className="card-accent-border"></div>
               <div className="card-body p-4 p-lg-5">
-                <div className="tech-icon-container mb-4">
+                <div className="card-icon mb-4">
                   <img
                     src="/img/content/Cloud (2).svg"
                     className="tech-icon"
@@ -59,9 +62,6 @@ const Technology = () => {
                   your location data storage and processing to the highest
                   standards of security using GCP.
                 </p>
-                <a href="#!" className="btn-link mt-3">
-                  Learn more <i className="fas fa-arrow-right ms-1"></i>
-                </a>
               </div>
             </div>
           </div>

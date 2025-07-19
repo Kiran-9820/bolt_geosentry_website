@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 // Import Homepage Sections
 import Banner from "../sections/home/Banner";
-import Solutions from "../sections/home/Solutions";
+// import Solutions from "../sections/home/Solutions";
 import Services from "../sections/home/Services";
 import Technology from "../sections/home/Technology";
-import SdkApi from "../sections/home/SdkApi";
+// import SdkApi from "../sections/home/SdkApi";
 import Testimonials from "../sections/home/Testimonials";
 import CallToAction from "../sections/home/CallToAction";
 
@@ -44,9 +44,9 @@ const HomePage = () => {
   return (
     <main className="modern-main">
       <Banner />
-      <div className="section-container">
+      {/* <div className="section-container">
         <Solutions />
-      </div>
+      </div> */}
       <div className="section-container alternate-bg">
         <Services />
       </div>
@@ -59,12 +59,12 @@ const HomePage = () => {
       </div>
 
       {/* SDK & API section with modern design */}
-      <div className="section-container sdk-modern-container position-relative overflow-hidden">
+      {/* <div className="section-container sdk-modern-container position-relative overflow-hidden">
         <div className="modern-background-overlay"></div>
         <div className="scroll-animation fade-in-left">
           <SdkApi />
         </div>
-      </div>
+      </div> */}
 
       {/* Testimonials section with modern design */}
       <div className="section-container testimonial-modern-container">

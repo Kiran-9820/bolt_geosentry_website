@@ -60,11 +60,12 @@ const Testimonials = () => {
     <section className="modern-testimonial-section py-5">
       <div className="container">
         <div className="section-heading text-center mb-5">
-          <h2 className="display-4 fw-bold">What Our Clients Say</h2>
-          <p className="lead">
+          <h2 className="section-title mb-3 h2 fw-bold text-dark">
+            What <span className="text-gradient">Our Clients</span> Say
+          </h2>
+          <p className="section-description">
             Real feedback from businesses trusting Geosentry
           </p>
-          <div className="title-separator mx-auto"></div>
         </div>
 
         <div className="row justify-content-center">

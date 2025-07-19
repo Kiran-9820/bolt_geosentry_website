@@ -44,7 +44,7 @@ const Solutions = () => {
     <section className="bg-white py-5" id="modern-solutions">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="mb-3 h2 fw-bold text-dark">
+          <h2 className="section-title mb-3 h2 fw-bold text-dark">
             Powerful Solutions for Modern Fleet Management
           </h2>
           <p
@@ -62,11 +62,12 @@ const Solutions = () => {
             <div className="col-md-6 col-lg-4" key={index}>
               <div className="modern-solution-box p-4 h-100 bg-light shadow-sm rounded-4 position-relative overflow-hidden">
                 <div
-                  className="solution-icon-wrapper mb-4 rounded-circle d-flex align-items-center justify-content-center"
+                  className="solution-icon-wrapper mb-2 rounded-circle d-flex align-items-center justify-content-center"
                   style={{
                     width: "80px",
                     height: "80px",
-                    background: "linear-gradient(135deg, #0063ff, #0052d6)",
+                    background:
+                      "linear-gradient(135deg, #444599 0%, #33bab3 100%)",
                   }}
                 >
                   <img
@@ -76,26 +77,11 @@ const Solutions = () => {
                     style={{
                       width: "40px",
                       height: "40px",
-                      filter: "brightness(0) invert(1)",
                     }}
                   />
                 </div>
                 <h3 className="h5 fw-bold mb-3">{item.title}</h3>
-                <p className="mb-4 text-muted">{item.description}</p>
-                <a
-                  href="#!"
-                  className="text-primary fw-bold text-decoration-none"
-                >
-                  Learn more <i className="fas fa-arrow-right ms-1"></i>
-                </a>
-                <div
-                  className="hover-overlay position-absolute top-0 start-0 w-100 h-100"
-                  style={{
-                    background: "linear-gradient(135deg, #0063ff, #0052d6)",
-                    opacity: 0,
-                    transition: "all 0.3s ease",
-                  }}
-                ></div>
+                <p className="mb-2 text-muted">{item.description}</p>
               </div>
             </div>
           ))}

@@ -12,6 +12,23 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const contactItemStyle = {
+    display: "flex",
+    alignItems: "center",
+  };
+
+  const iconBoxStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const contactTextStyle = {
+    display: "flex",
+    alignItems: "center",
+    margin: 0,
+  };
+
   return (
     <footer className="modern-footer">
       <div className="footer-main">
@@ -19,10 +36,16 @@ const Footer = () => {
           <Row className="footer-content">
             <Col lg={4} md={6} className="mb-5 mb-md-4 mb-lg-0">
               <div className="footer-about">
-                <Link to="/" className="footer-logo">
+                <Link to="/" className="logo">
                   <img
-                    src="/img/logos/geosentry-logo-color-390.svg"
+                    src="/img/logos/geosentry-logo-white-390.svg"
                     alt="Geosentry"
+                    className="main-logo"
+                    style={{
+                      maxHeight: "150px",
+                      width: "250px",
+                      marginBottom: "20px",
+                    }}
                   />
                 </Link>
                 <p className="about-text">
@@ -75,7 +98,7 @@ const Footer = () => {
                     <Link to="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/service">Services</Link>
+                    <Link to="/service/fleet-management">Services</Link>
                   </li>
                   <li>
                     <Link to="/pricing">Pricing</Link>
@@ -94,24 +117,31 @@ const Footer = () => {
               <div className="footer-contact">
                 <h4 className="footer-title">Contact Us</h4>
                 <ul className="contact-list">
-                  <li className="contact-item">
-                    <div className="icon-box">
+                  <li className="contact-item" style={contactItemStyle}>
+                    <div className="icon-box" style={iconBoxStyle}>
                       <i className="fas fa-phone-alt"></i>
                     </div>
                     <div className="contact-text">
-                      <p>+91 91138-21395</p>
+                      <p style={contactTextStyle}>+91 91138-21395</p>
                     </div>
                   </li>
-                  <li className="contact-item">
-                    <div className="icon-box">
+                  <li className="contact-item" style={contactItemStyle}>
+                    <div className="icon-box" style={iconBoxStyle}>
                       <i className="fas fa-envelope"></i>
                     </div>
                     <div className="contact-text">
-                      <p>support@geosentry.ai</p>
+                      <p style={contactTextStyle}>support@geosentry.ai</p>
                     </div>
                   </li>
-                  <li className="contact-item">
-                    <div className="icon-box">
+                  <li className="contact-item" style={contactItemStyle}>
+                    <div
+                      className="icon-box"
+                      style={{
+                        ...iconBoxStyle,
+                        alignSelf: "flex-start",
+                        paddingTop: "3px",
+                      }}
+                    >
                       <i className="fas fa-map-marker-alt"></i>
                     </div>
                     <div className="contact-text">
@@ -159,8 +189,8 @@ const Footer = () => {
         <Container>
           <div className="copyright">
             <p>
-              Copyright &copy; {currentYear} Geosentry Private Limited. All
-              rights reserved
+              &copy; {currentYear} Geosentry Private Limited. All rights
+              reserved
             </p>
           </div>
         </Container>
